@@ -1,37 +1,31 @@
-import { fetchImages } from './js/pixabay-api.js';
-import {
-  renderGallery,
-  showLoader,
-  hideLoader,
-  displayNoResultsMessage,
-} from './js/render-functions.js';
+import { fetchImages } from './js/pixabay-api';
+import { renderGallery } from './js/render-functions';
 
-let currentPage = 1;
 const form = document.getElementById('search-form');
 const gallery = document.getElementById('gallery');
+const loader = document.getElementById('loader');
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
-  const query = event.target.elements.query.value.trim();
 
-  if (!query) return;
+  const query = form.elements.query.value.trim();
+  if (query === '') {
+    iziToast.warning({
+      title: 'Warning',
+      message: 'Please enter a search query.',
+    });
+    return;
+  }
 
-  currentPage = 1;
-  gallery.innerHTML = '';
-  showLoader();
+  gallery.innerHTML = ''; // Очистка галереи перед новым запросом
+  loader.classList.remove('hidden'); // Показать индикатор загрузки
 
   try {
-    const data = await fetchImages(query, currentPage);
-
-    if (data.hits.length === 0) {
-      displayNoResultsMessage();
-      return;
-    }
-
-    renderGallery(data.hits);
+    const data = await fetchImages(query);
+    renderGallery(data.hits); // Передаем данные для отображения
   } catch (error) {
     console.error('Error fetching images:', error);
   } finally {
-    hideLoader();
+    loader.classList.add('hidden'); // Скрыть индикатор загрузки после завершения запроса
   }
 });
