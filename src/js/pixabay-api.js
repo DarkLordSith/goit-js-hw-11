@@ -1,7 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const API_KEY = 'your_api_key';
+const API_KEY = '46873247-b56a65fb4c08f29194ce1856e';
 const BASE_URL = 'https://pixabay.com/api/';
 
 export async function fetchImages(query, page = 1, perPage = 12) {
