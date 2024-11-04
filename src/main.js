@@ -1,5 +1,5 @@
-import { fetchImages } from '/js/pixabay-api';
-import { renderGallery } from '/js/render-functions';
+import { fetchImages } from './js/pixabay-api';
+import { renderGallery } from './js/render-functions.js';
 
 const form = document.getElementById('search-form');
 const gallery = document.getElementById('gallery');
