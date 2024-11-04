@@ -5,6 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/goit-js-hw-11/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GOITHW11</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css"
@@ -20,7 +26,7 @@
     <script type="module" crossorigin src="/goit-js-hw-11/index.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-5ObWk2rO.js">
     <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/vendor-DumFYO8Z.css">
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-DnE7dJ9K.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-BQlEWOdZ.css">
   </head>
   <body>
     <header>
@@ -36,8 +42,10 @@
       </form>
     </header>
     <main>
-      <div id="gallery" class="gallery"></div>
-      <div id="loader" class="loader hidden"></div>
+      <ul id="gallery" class="gallery"></ul>
+      <div id="loader" class="loader hidden">
+        Loading images, please wait...
+      </div>
     </main>
   </body>
 </html>
