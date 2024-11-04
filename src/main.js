@@ -17,15 +17,15 @@ form.addEventListener('submit', async event => {
     return;
   }
 
-  gallery.innerHTML = ''; // Очистка галереи перед новым запросом
-  loader.classList.remove('hidden'); // Показать индикатор загрузки
+  gallery.innerHTML = '';
+  loader.classList.remove('hidden');
 
   try {
     const data = await fetchImages(query);
-    renderGallery(data.hits); // Передаем данные для отображения
+    renderGallery(data.hits);
   } catch (error) {
     console.error('Error fetching images:', error);
   } finally {
-    loader.classList.add('hidden'); // Скрыть индикатор загрузки после завершения запроса
+    loader.classList.add('hidden');
   }
 });

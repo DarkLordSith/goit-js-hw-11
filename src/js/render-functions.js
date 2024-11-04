@@ -30,7 +30,6 @@ export function renderGallery(images) {
 
   gallery.innerHTML = markup;
 
-  // Обновление SimpleLightbox после добавления новых элементов
   const lightbox = new SimpleLightbox('.gallery-item');
   lightbox.refresh();
 }
