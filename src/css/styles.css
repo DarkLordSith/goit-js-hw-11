@@ -110,7 +110,12 @@ header {
   color: #2e2f42;
   font-size: 12px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.info-text {
+  width: min-content;
+  text-align: center;
 }
 
 .loader {
