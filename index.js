@@ -2,10 +2,10 @@ import{i as n,S as p}from"./assets/vendor-5ObWk2rO.js";(function(){const r=docum
     <a href="${t}" class="gallery-item">
       <img src="${e}" alt="${i}" />
       <div class="info">
-        <p>Likes: ${f}</p>
-        <p>Views: ${m}</p>
-        <p>Comments: ${g}</p>
-        <p>Downloads: ${d}</p>
+        <p class="info-text">Likes: ${f}</p>
+        <p class="info-text">Views: ${m}</p>
+        <p class="info-text">Comments: ${g}</p>
+        <p class="info-text">Downloads: ${d}</p>
       </div>
     </a>
   `).join("");r.innerHTML=o,new p(".gallery-item").refresh()}const c=document.getElementById("search-form"),L=document.getElementById("gallery"),l=document.getElementById("loader");c.addEventListener("submit",async s=>{s.preventDefault();const r=c.elements.query.value.trim();if(r===""){n.warning({position:"topRight",message:"Please enter a search query.",messageSize:"16",backgroundColor:"#ef4040",messageColor:"#fafafb",maxWidth:"432px",messageLineHeight:"88px"});return}L.innerHTML="",l.classList.remove("hidden");try{const o=await y(r);b(o.hits)}catch(o){console.error("Error fetching images:",o),n.error({title:"Error",message:"Failed to load images. Try again."})}finally{l.classList.add("hidden")}});
